@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     
-    <title>Palindrome Number | zuoyang&#39;s blog</title>
+    <title>ZigZag Conversion | zuoyang&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="问题描述： Determine whether an integer is a palindrome. Do this without extra space. click to show spoilers. Some hints:Could negative integers be palindromes? (ie, -1) If you are thinking of converting t">
+    <meta name="description" content="问题描述： The string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility) P   A   H   NA P L S">
 <meta name="keywords" content="C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Palindrome Number">
-<meta property="og:url" content="https://www.zuoyangblog.com/post/b216f26b.html">
+<meta property="og:title" content="ZigZag Conversion">
+<meta property="og:url" content="https://www.zuoyangblog.com/post/61984fa2.html">
 <meta property="og:site_name" content="zuoyang&#39;s blog">
-<meta property="og:description" content="问题描述： Determine whether an integer is a palindrome. Do this without extra space. click to show spoilers. Some hints:Could negative integers be palindromes? (ie, -1) If you are thinking of converting t">
+<meta property="og:description" content="问题描述： The string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility) P   A   H   NA P L S">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-11-15T16:14:30.000Z">
+<meta property="og:updated_time" content="2018-11-15T16:18:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Palindrome Number">
-<meta name="twitter:description" content="问题描述： Determine whether an integer is a palindrome. Do this without extra space. click to show spoilers. Some hints:Could negative integers be palindromes? (ie, -1) If you are thinking of converting t">
+<meta name="twitter:title" content="ZigZag Conversion">
+<meta name="twitter:description" content="问题描述： The string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility) P   A   H   NA P L S">
     
 
     
@@ -166,7 +166,7 @@ ga('send', 'pageview');
                 document.querySelector('style').textContent += "@media screen and (max-width: 1199px) and (min-width: 800px) { #main {margin: auto; width: 70%; display: block; float:none;}}"
                 </script>
             
-            <section id="main"><article id="post-Palindrome-Number" class="article article-type-post" itemscope="" itemprop="blogPost">
+            <section id="main"><article id="post-ZigZag-Conversion" class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -174,7 +174,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-            Palindrome Number
+            ZigZag Conversion
         </h1>
     
 
@@ -184,7 +184,7 @@ ga('send', 'pageview');
     <div class="article-date">
         <i class="fa fa-calendar"></i>
         <a href="">
-            <time datetime="2018-11-15T16:06:52.000Z" itemprop="datePublished">2018-11-16</time>
+            <time datetime="2018-11-15T16:16:46.000Z" itemprop="datePublished">2018-11-16</time>
         </a>
     </div>
 
@@ -213,18 +213,13 @@ ga('send', 'pageview');
         
         
             <p><strong>问题描述：</strong></p>
-<p>Determine whether an integer is a palindrome. Do this without extra space.</p>
-<p>click to show spoilers.</p>
-<p>Some hints:<br>Could negative integers be palindromes? (ie, -1)</p>
-<p>If you are thinking of converting the integer to string, note the restriction of using extra space.</p>
-<p>You could also try reversing an integer. However, if you have solved the problem “Reverse Integer”, you know that the reversed integer might overflow. How would you handle such case?</p>
-<p>There is a more generic way of solving this problem.</p>
+<p>The string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)</p>
+<p>P   A   H   N<br>A P L S I I G<br>Y   I   R<br>And then read line by line: “PAHNAPLSIIGYIR”<br>Write the code that will take a string and make this conversion given a number of rows:</p>
+<p>string convert(string text, int nRows);<br>convert(“PAYPALISHIRING”, 3) should return “PAHNAPLSIIGYIR”.</p>
 <p><strong>解决思路：</strong></p>
-<p>这里要求不能使用额外的空间，基本思路是首先求出数据的位数，然后编写一个函数能够求出每一位的数字，然后遍历比较即可。</p>
-<p><strong>代码1：</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (x &lt; <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">int</span> num = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> y = x;</span><br><span class="line">        <span class="keyword">while</span>( y != <span class="number">0</span>)&#123;</span><br><span class="line">            num ++;</span><br><span class="line">            y /= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> i,j;</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">1</span>, j = num; i &lt; j;i++,j--)&#123;</span><br><span class="line">            <span class="keyword">if</span> (search(x,num,i) != search(x,num,j))</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> n,<span class="keyword">int</span> index)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> d = <span class="built_in">pow</span>(<span class="number">10</span>,n-index);</span><br><span class="line">        <span class="keyword">int</span> y = x/d;</span><br><span class="line">        <span class="keyword">return</span> y%<span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p><strong>代码2：</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (x &lt; <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">int</span> z = x;</span><br><span class="line">        <span class="keyword">int</span> y = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>( x != <span class="number">0</span>)&#123;</span><br><span class="line">            y *= <span class="number">10</span>;</span><br><span class="line">            y += x%<span class="number">10</span>;</span><br><span class="line">            x /= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(z == y)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>找出规律即可，每次的周期为2<em>nRows-2,但是在1到nRows-1的行数还需要判断周期为2</em>（nRows-1-i）的元素，i是处于1到nRows-1的行数。</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">convert</span><span class="params">(<span class="built_in">string</span> s, <span class="keyword">int</span> nRows)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.empty() || nRows &lt;= <span class="number">1</span> || s.length() &lt; nRows)</span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line">        <span class="built_in">string</span> result;</span><br><span class="line">        <span class="keyword">int</span> cycle = <span class="number">2</span> * nRows - <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nRows; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; s.length(); j += cycle)&#123;</span><br><span class="line">                result.push_back(s[j]);</span><br><span class="line">                <span class="keyword">if</span>( i &gt; <span class="number">0</span> &amp;&amp; i &lt; nRows<span class="number">-1</span>)&#123;</span><br><span class="line">                    <span class="keyword">if</span> (j + <span class="number">2</span> *(nRows - <span class="number">1</span> - i) &lt; s.length())</span><br><span class="line">                        result.push_back(s[j + <span class="number">2</span> *(nRows - <span class="number">1</span> - i)]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
             </div>
         
@@ -235,19 +230,19 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="42870ae4.html" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="1d8b65b1.html" id="article-nav-newer" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Newer</strong>
             <div class="article-nav-title">
                 
-                    Intersection of Two Linked Lists
+                    Remove Duplicates from Sorted List
                 
             </div>
         </a>
     
     
-        <a href="50445eba.html" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="5c1c4dd0.html" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">Excel Sheet Column Number</div>
+            <div class="article-nav-title">Balanced Binary Tree</div>
         </a>
     
 </nav>
@@ -261,7 +256,7 @@ ga('send', 'pageview');
     <section id="comments">
     
       
-    <div class="fb-comments" data-width="100%" data-href="https://www.zuoyangblog.com/post/b216f26b.html" data-num-posts="5"></div>
+    <div class="fb-comments" data-width="100%" data-href="https://www.zuoyangblog.com/post/61984fa2.html" data-num-posts="5"></div>
 
 
     
