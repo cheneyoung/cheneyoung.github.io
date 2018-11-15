@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     
-    <title>Linked List Cycle | zuoyang&#39;s blog</title>
+    <title>Binary Tree Inorder Traversal | zuoyang&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="问题描述： Given a linked list, determine if it has a cycle in it. Follow up:Can you solve it without using extra space? 解决思路： 采用快慢指针的方法，快指针一次走两步，慢指针一次走一步，如果链表中有环的话，经过走一定的步数之后快慢指针一定会相遇的，当然如果没有环就需考虑循环结束的条件，">
-<meta name="keywords" content="C++,List">
+    <meta name="description" content="问题描述： Given a binary tree, return the inorder traversal of its nodes’ values. For example:Given binary tree {1,#,2,3},    1​    \​     2​    /   3return [1,3,2]. Note: Recursive solution is trivial, c">
+<meta name="keywords" content="C++,Binary Tree">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linked List Cycle">
-<meta property="og:url" content="https://www.zuoyangblog.com/post/c94099d8.html">
+<meta property="og:title" content="Binary Tree Inorder Traversal">
+<meta property="og:url" content="https://www.zuoyangblog.com/post/8a5e7d39.html">
 <meta property="og:site_name" content="zuoyang&#39;s blog">
-<meta property="og:description" content="问题描述： Given a linked list, determine if it has a cycle in it. Follow up:Can you solve it without using extra space? 解决思路： 采用快慢指针的方法，快指针一次走两步，慢指针一次走一步，如果链表中有环的话，经过走一定的步数之后快慢指针一定会相遇的，当然如果没有环就需考虑循环结束的条件，">
+<meta property="og:description" content="问题描述： Given a binary tree, return the inorder traversal of its nodes’ values. For example:Given binary tree {1,#,2,3},    1​    \​     2​    /   3return [1,3,2]. Note: Recursive solution is trivial, c">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-11-15T16:25:35.000Z">
+<meta property="og:updated_time" content="2018-11-15T16:35:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linked List Cycle">
-<meta name="twitter:description" content="问题描述： Given a linked list, determine if it has a cycle in it. Follow up:Can you solve it without using extra space? 解决思路： 采用快慢指针的方法，快指针一次走两步，慢指针一次走一步，如果链表中有环的话，经过走一定的步数之后快慢指针一定会相遇的，当然如果没有环就需考虑循环结束的条件，">
+<meta name="twitter:title" content="Binary Tree Inorder Traversal">
+<meta name="twitter:description" content="问题描述： Given a binary tree, return the inorder traversal of its nodes’ values. For example:Given binary tree {1,#,2,3},    1​    \​     2​    /   3return [1,3,2]. Note: Recursive solution is trivial, c">
     
 
     
@@ -166,7 +166,7 @@ ga('send', 'pageview');
                 document.querySelector('style').textContent += "@media screen and (max-width: 1199px) and (min-width: 800px) { #main {margin: auto; width: 70%; display: block; float:none;}}"
                 </script>
             
-            <section id="main"><article id="post-Linked-List-Cycle" class="article article-type-post" itemscope="" itemprop="blogPost">
+            <section id="main"><article id="post-Binary-Tree-Inorder-Traversal" class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -174,7 +174,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-            Linked List Cycle
+            Binary Tree Inorder Traversal
         </h1>
     
 
@@ -184,7 +184,7 @@ ga('send', 'pageview');
     <div class="article-date">
         <i class="fa fa-calendar"></i>
         <a href="">
-            <time datetime="2018-11-15T16:20:05.000Z" itemprop="datePublished">2018-11-16</time>
+            <time datetime="2018-11-15T16:33:28.000Z" itemprop="datePublished">2018-11-16</time>
         </a>
     </div>
 
@@ -198,7 +198,7 @@ ga('send', 'pageview');
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="../tags/C/">C++</a>, <a class="tag-link" href="../tags/List/">List</a>
+        <a class="tag-link" href="../tags/Binary-Tree/">Binary Tree</a>, <a class="tag-link" href="../tags/C/">C++</a>
     </div>
 
                     </div>
@@ -213,13 +213,15 @@ ga('send', 'pageview');
         
         
             <p><strong>问题描述：</strong></p>
-<p>Given a linked list, determine if it has a cycle in it.</p>
-<p>Follow up:<br>Can you solve it without using extra space?</p>
+<p>Given a binary tree, return the inorder traversal of its nodes’ values.</p>
+<p>For example:<br>Given binary tree {1,#,2,3},</p>
+<p>   1<br>​    \<br>​     2<br>​    /<br>   3<br>return [1,3,2].</p>
+<p>Note: Recursive solution is trivial, could you do it iteratively?</p>
+<p>confused what “{1,#,2,3}” means? &gt; read more on how binary tree is serialized on OJ.</p>
 <p><strong>解决思路：</strong></p>
-<p>采用快慢指针的方法，快指针一次走两步，慢指针一次走一步，如果链表中有环的话，经过走一定的步数之后快慢指针一定会相遇的，当然如果没有环就需考虑循环结束的条件，这里主要要考虑快指针的情况即可。</p>
+<p>本想用栈去实现，但是这上面好像没有栈的定义，没办法只好用vector去解决了。</p>
 <p><strong>代码：</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">hasCycle</span><span class="params">(ListNode *head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="literal">NULL</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(head-&gt;next == <span class="literal">NULL</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        ListNode *p,*q;</span><br><span class="line">        p = head;</span><br><span class="line">        q = head;</span><br><span class="line">       <span class="keyword">while</span>(p != <span class="literal">NULL</span> &amp;&amp; p-&gt;next != <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            p = p-&gt;next-&gt;next;</span><br><span class="line">            q = q-&gt;next;</span><br><span class="line">            <span class="keyword">if</span>(p == q)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for binary tree</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; inorderTraversal(TreeNode *root) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; intr;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">NULL</span>)</span><br><span class="line">            <span class="keyword">return</span> intr;</span><br><span class="line">        <span class="built_in">vector</span>&lt;TreeNode*&gt; node;</span><br><span class="line">        TreeNode *p;</span><br><span class="line">        p = root;</span><br><span class="line">        <span class="keyword">while</span>(p != <span class="literal">NULL</span> || !node.empty())&#123;</span><br><span class="line">            <span class="keyword">if</span>(p != <span class="literal">NULL</span>)&#123;</span><br><span class="line">                node.push_back(p);</span><br><span class="line">                p =p-&gt;left;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                TreeNode *t = node.back();</span><br><span class="line">                node.pop_back();</span><br><span class="line">                intr.push_back(t-&gt;val);</span><br><span class="line">                p = t-&gt;right;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> intr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
             </div>
         
         </div>
@@ -229,19 +231,19 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="8a5e7d39.html" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="d13d2726.html" id="article-nav-newer" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Newer</strong>
             <div class="article-nav-title">
                 
-                    Binary Tree Inorder Traversal
+                    Binary Tree Preorder Traversal
                 
             </div>
         </a>
     
     
-        <a href="1d8b65b1.html" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="c94099d8.html" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">Remove Duplicates from Sorted List</div>
+            <div class="article-nav-title">Linked List Cycle</div>
         </a>
     
 </nav>
@@ -255,7 +257,7 @@ ga('send', 'pageview');
     <section id="comments">
     
       
-    <div class="fb-comments" data-width="100%" data-href="https://www.zuoyangblog.com/post/c94099d8.html" data-num-posts="5"></div>
+    <div class="fb-comments" data-width="100%" data-href="https://www.zuoyangblog.com/post/8a5e7d39.html" data-num-posts="5"></div>
 
 
     
