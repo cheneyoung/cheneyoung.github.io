@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     
-    <title>zuoyang&#39;s blog</title>
+    <title>第三篇：手动部署Ceph集群 | zuoyang&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="hi,大家好！欢迎大家来到我的blog，希望以后能跟各位大佬一起学习进步。 我叫左杨，目前就职于蚂蚁金服人工智能部，从事于蚂蚁人工智能相关的开发工作，对Machine Learning，Deep Learning比较感兴趣。">
-<meta name="keywords" content="CS AI ML DL">
-<meta property="og:type" content="website">
-<meta property="og:title" content="zuoyang&#39;s blog">
-<meta property="og:url" content="https://www.zuoyangblog.com/about/index.html">
+    <meta name="description" content="上篇介绍了部署Ceph的环境准备工作，本篇主要内容是介绍手动部署Ceph的全过程。 环境上一篇，我们配置了">
+<meta name="keywords" content="ceph">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第三篇：手动部署Ceph集群">
+<meta property="og:url" content="https://www.zuoyangblog.com/post/28a4bfb3.html">
 <meta property="og:site_name" content="zuoyang&#39;s blog">
-<meta property="og:description" content="hi,大家好！欢迎大家来到我的blog，希望以后能跟各位大佬一起学习进步。 我叫左杨，目前就职于蚂蚁金服人工智能部，从事于蚂蚁人工智能相关的开发工作，对Machine Learning，Deep Learning比较感兴趣。">
+<meta property="og:description" content="上篇介绍了部署Ceph的环境准备工作，本篇主要内容是介绍手动部署Ceph的全过程。 环境上一篇，我们配置了">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-11-15T14:56:49.000Z">
+<meta property="og:updated_time" content="2018-11-21T12:56:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zuoyang&#39;s blog">
-<meta name="twitter:description" content="hi,大家好！欢迎大家来到我的blog，希望以后能跟各位大佬一起学习进步。 我叫左杨，目前就职于蚂蚁金服人工智能部，从事于蚂蚁人工智能相关的开发工作，对Machine Learning，Deep Learning比较感兴趣。">
+<meta name="twitter:title" content="第三篇：手动部署Ceph集群">
+<meta name="twitter:description" content="上篇介绍了部署Ceph的环境准备工作，本篇主要内容是介绍手动部署Ceph的全过程。 环境上一篇，我们配置了">
     
 
     
@@ -77,7 +77,7 @@ ga('send', 'pageview');
                 
                     <a class="main-nav-link" href="../tags">Tags</a>
                 
-                    <a class="main-nav-link" href="">About</a>
+                    <a class="main-nav-link" href="../about">About</a>
                 
             </nav>
             
@@ -142,7 +142,7 @@ ga('send', 'pageview');
                 
                     <td><a class="main-nav-link" href="../tags">Tags</a></td>
                 
-                    <td><a class="main-nav-link" href="">About</a></td>
+                    <td><a class="main-nav-link" href="../about">About</a></td>
                 
                 <td>
                     
@@ -158,75 +158,61 @@ ga('send', 'pageview');
 
         <div class="outer">
             
-                
-
-<aside id="profile">
-    <div class="inner profile-inner">
-        <div class="base-info profile-block">
-            <img id="avatar" src="../css/images/profile_pic.jpg">
-            <h2 id="name">Zuoyang</h2>
-            <h3 id="title">AI Developer</h3>
-            <span id="location"><i class="fa fa-map-marker"></i>Hangzhou,China</span>
-            <a id="follow" target="_blank" href="https://www.linkedin.com/in/yang-zuo-39a99b88/">FOLLOW</a>
-        </div>
-        <div class="article-info profile-block">
-            <div class="article-info-block">
-                27
-                <span>posts</span>
-            </div>
-            <div class="article-info-block">
-                9
-                <span>tags</span>
-            </div>
-        </div>
-        
-        <div class="profile-block social-links">
-            <table>
-                <tr>
-                    
-                    
-                    <td>
-                        <a href="http://cheneyoung.github.io" target="_blank" title="Profile" class="tooltip"> <i class="fa fa-home"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="https://www.linkedin.com/in/yang-zuo-39a99b88/" target="_blank" title="LinkedIn" class="tooltip"> <i class="fa fa-linkedin"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="https://github.com/cheneyoung" target="_blank" title="GitHub" class="tooltip"> <i class="fa fa-github"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="mailto:zuoyang_pku@163.com" target="_blank" title="Mailme" class="tooltip"> <i class="fa fa-envelope-square"></i>
-                        </a>
-                    </td>
-                    
-                </tr>
-            </table>
-        </div>
-        
-    </div>
-</aside>
-
             
+                <script type='text/javascript'>
+                $('body').append("<style type='text/css'>@media screen and (min-width: 1200px) { #main {margin: auto; width: 70%; display: block; float:none;}}</style>");
+                </script>
+                <script type='text/javascript'>
+                document.querySelector('style').textContent += "@media screen and (max-width: 1199px) and (min-width: 800px) { #main {margin: auto; width: 70%; display: block; float:none;}}"
+                </script>
             
-            <section id="main"><article id="page-" class="article article-type-page" itemscope="" itemprop="blogPost">
+            <section id="main"><article id="post-manual-deploy-ceph" class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name" style="color: #009688;font-size:1.5em;">
+            第三篇：手动部署Ceph集群
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="../categories/ceph/">ceph</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="../tags/ceph/">ceph</a>
+    </div>
+
+                        
+                            <i class="fa fa-eye"></i> <span id="busuanzi_value_page_pv"></span>次
+                        
+                    </div>
+                
+            </header>
         
         
         <div class="article-entry" itemprop="articleBody">
         
         
             
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">环境</span></a></li></ol>
+                </div>
+            
         
         
-            <p>hi,大家好！欢迎大家来到我的blog，希望以后能跟各位大佬一起学习进步。</p>
-<p>我叫左杨，目前就职于蚂蚁金服人工智能部，从事于蚂蚁人工智能相关的开发工作，对Machine Learning，Deep Learning比较感兴趣。</p>
+            <p>上篇介绍了部署Ceph的环境准备工作，本篇主要内容是介绍手动部署Ceph的全过程。</p>
+<h1><span id="环境">环境</span></h1><p>上一篇，我们配置了</p>
 
             </div>
         
@@ -235,6 +221,16 @@ ga('send', 'pageview');
     
     
         
+<nav id="article-nav">
+    
+    
+        <a href="ad293d8.html" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">第二篇：Ceph集群环境准备</div>
+        </a>
+    
+</nav>
+
 
     
 </article>
@@ -254,7 +250,7 @@ ga('send', 'pageview');
             repo: 'cheneyoung.github.io',
             owner: 'cheneyoung',
             admin: ['cheneyoung'],
-            id: "https://www.zuoyangblog.com/about/index.html".substr(19,50),      // Ensure uniqueness and length less than 50
+            id: "https://www.zuoyangblog.com/post/28a4bfb3.html".substr(19,50),      // Ensure uniqueness and length less than 50
             distractionFreeMode: false  // Facebook-like distraction free mode
         })
 
@@ -292,7 +288,7 @@ ga('send', 'pageview');
             repo: 'cheneyoung.github.io',
             owner: 'cheneyoung',
             admin: ['cheneyoung'],
-            id: "https://www.zuoyangblog.com/about/index.html".substr(19,50),      // Ensure uniqueness and length less than 50
+            id: "https://www.zuoyangblog.com/post/28a4bfb3.html".substr(19,50),      // Ensure uniqueness and length less than 50
             distractionFreeMode: false  // Facebook-like distraction free mode
         })
 
