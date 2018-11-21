@@ -13,29 +13,30 @@
 <meta property="og:site_name" content="zuoyang&#39;s blog">
 <meta property="og:description" content="第一篇简单介绍了Ceph的架构，让我们对Ceph有了一个初步的印象。 接下来，我将在MAC上介绍如何基于本机搭建ceph集群及cephfs、cephrgw、cephrbd服务。 在部署之前，首先需要介绍前期环境的准备工作：  软件准备：VirtualBox，CentOS 安装虚拟机 虚拟机ceph软件安装  软件准备 安装VirtualBox 点击 VirtualBox Mac版本，下载Virtu">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://www.zuoyangblog.com/post/ceph-enviroment-set/network.jpg">
 <meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/network.jpg">
 <meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/ip.jpg">
 <meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/new.jpg">
-<meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/memory.png">
-<meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/disk.png">
-<meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/virtual_disk.png">
-<meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/dynamic.png">
-<meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/disk_size.png">
+<meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/memory.jpg">
+<meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/disk.jpg">
+<meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/virtual_disk.jpg">
+<meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/dynamic.jpg">
+<meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/disk_size.jpg">
 <meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/addios.jpg">
-<meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/newvhd.png">
-<meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/newvhd2.png">
-<meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/finish.png">
-<meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/install_os1.png">
+<meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/newvhd.jpg">
+<meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/newvhd2.jpg">
+<meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/finish.jpg">
+<meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/adapter1.jpg">
+<meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/adapter2.jpg">
+<meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/install_os1.jpg">
 <meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/install_os2.jpg">
-<meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/install_os3.png">
-<meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/user.png">
-<meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/user_set.png">
-<meta property="og:updated_time" content="2018-11-21T04:47:31.000Z">
+<meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/install_os3.jpg">
+<meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/user.jpg">
+<meta property="og:image" content="https://www.zuoyangblog.com/post/ad293d8/user_set.jpg">
+<meta property="og:updated_time" content="2018-11-21T05:42:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第二篇：Ceph集群环境准备">
 <meta name="twitter:description" content="第一篇简单介绍了Ceph的架构，让我们对Ceph有了一个初步的印象。 接下来，我将在MAC上介绍如何基于本机搭建ceph集群及cephfs、cephrgw、cephrbd服务。 在部署之前，首先需要介绍前期环境的准备工作：  软件准备：VirtualBox，CentOS 安装虚拟机 虚拟机ceph软件安装  软件准备 安装VirtualBox 点击 VirtualBox Mac版本，下载Virtu">
-<meta name="twitter:image" content="https://www.zuoyangblog.com/post/ceph-enviroment-set/network.jpg">
+<meta name="twitter:image" content="https://www.zuoyangblog.com/post/ad293d8/network.jpg">
     
 
     
@@ -244,7 +245,6 @@ ga('send', 'pageview');
 <h3><span id="添加网络">添加网络</span></h3>
 <p>安装好之后，需要添加一个网络，这样可以保证在虚拟机里也能正常上网。具体操作如下：</p>
 <p>点击左上角的<code>VirtualBox-&gt;偏好设置-&gt;网络-&gt;仅主机(Host-Only)网络-&gt;</code>点击右边的绿色➕，一般会默认添加了<code>vboxnet0</code>，双击<code>vboxnet0</code>，可以看到网络的IP信息，默认为<code>192.168.56.1</code>，如下图：</p>
-<p><img src="ceph-enviroment-set/network.jpg" alt=""></p>
 <img src="/post/ad293d8/network.jpg" title="配置网络">
 <img src="/post/ad293d8/ip.jpg" title="默认IP">
 <h2><span id="下载centos镜像">下载CentOS镜像</span></h2>
@@ -258,16 +258,16 @@ ga('send', 'pageview');
 </li>
 <li>
 <p>内存设置：默认值为1G，直接下一步即可，如下图:</p>
-<img src="/post/ad293d8/memory.png" title="设置内存大小">
+<img src="/post/ad293d8/memory.jpg" title="设置内存大小">
 </li>
 <li>
 <p>创建虚拟硬盘：选择创建VDI，然后下一步，如下图:</p>
-<img src="/post/ad293d8/disk.png" title="创建虚拟硬盘">
-<img src="/post/ad293d8/virtual_disk.png" title="创建虚拟硬盘">
+<img src="/post/ad293d8/disk.jpg" title="创建虚拟硬盘">
+<img src="/post/ad293d8/virtual_disk.jpg" title="创建虚拟硬盘">
 </li>
 <li>
 <p>存储在物理盘：这里有两个选项-<code>动态分配</code>或<code>固定大小</code>，这里选择<code>动态分配</code>，见下图:</p>
-<img src="/post/ad293d8/dynamic.png" title="动态分配">
+<img src="/post/ad293d8/dynamic.jpg" title="动态分配">
 <ul>
 <li><code>动态分配</code>，这种方式下，创建一个2T的磁盘，实际只会占用计算机几十MB的空间，实际使用多少空间，才会占用多少空间，相当于用时分配。</li>
 <li><code>固定大小</code>，这种方式下，创建多大的盘就会占用多大的空间，当然选择上面那个选项咯。</li>
@@ -275,7 +275,7 @@ ga('send', 'pageview');
 </li>
 <li>
 <p>文件位置与大小：将空间大小设置为100G，这是用于系统盘。然后单机创建即可:</p>
-<img src="/post/ad293d8/disk_size.png" title="系统盘大小">
+<img src="/post/ad293d8/disk_size.jpg" title="系统盘大小">
 </li>
 </ul>
 <p>至此，虚拟机创建完成。</p>
@@ -286,24 +286,24 @@ ga('send', 'pageview');
 <h3><span id="添加3个2t磁盘">添加3个2T磁盘</span></h3>
 <p>点击<code>控制器:SATA</code>旁边的方形加号，添加SATA盘，<code>创建新的虚拟盘-&gt; VHD-&gt; 动态分配 -&gt; 2TB</code>.</p>
 <p>步骤如下图：</p>
-<img src="/post/ad293d8/newvhd.png" title="添加虚拟磁盘">
-<img src="/post/ad293d8/newvhd2.png" title="添加虚拟磁盘">
-<img src="/post/ad293d8/finish.png" title="完成虚拟盘创建">
+<img src="/post/ad293d8/newvhd.jpg" title="添加虚拟磁盘">
+<img src="/post/ad293d8/newvhd2.jpg" title="添加虚拟磁盘">
+<img src="/post/ad293d8/finish.jpg" title="完成虚拟盘创建">
 <h3><span id="配置网络">配置网络</span></h3>
 <p>点击<code>设置-&gt; 网络-&gt; 网卡 1-&gt; 连接方式 -&gt; 网络地址转换(NAT)</code>，用于给VM上网，如下图所示：</p>
-
+<img src="/post/ad293d8/adapter1.jpg" title="配置网卡1">
 <p>点击<code>网卡2 -&gt; 勾选启用网络连接 -&gt; 连接方式 -&gt; 仅主机(Host-only)网络 -&gt; 界面名称 -&gt; vboxnet0</code>这里的<code>vboxnet0</code>是在上一步中添加的，如下图所示：</p>
-
+<img src="/post/ad293d8/adapter2.jpg" title="配置网络">
 <p>虚拟机配置完成，接下来进行安装CentOS。</p>
 <h3><span id="安装centos">安装CentOS</span></h3>
 <p>启动刚刚创建的虚拟机，Install CentOS 7，一直往下点，然后出现下面的页面：</p>
-<img src="/post/ad293d8/install_os1.png" title="安装CentOS1">
+<img src="/post/ad293d8/install_os1.jpg" title="安装CentOS1">
 <p>点击红框中的选项，然后Begin Install：</p>
 <img src="/post/ad293d8/install_os2.jpg" title="安装CentOS2">
 <p>之后再设置root密码：</p>
-<img src="/post/ad293d8/install_os3.png" title="设置root密码">
-<img src="/post/ad293d8/user.png" title="添加用户">
-<img src="/post/ad293d8/user_set.png" title="设置账号密码">
+<img src="/post/ad293d8/install_os3.jpg" title="设置root密码">
+<img src="/post/ad293d8/user.jpg" title="添加用户">
+<img src="/post/ad293d8/user_set.jpg" title="设置账号密码">
 <p>之后一直等就可以了，最后重启机器，安装完成。</p>
 <h3><span id="配置网卡">配置网卡</span></h3>
 <h4><span id="修改ifcfg-enp0s3">修改ifcfg-enp0s3</span></h4>
