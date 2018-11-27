@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     
-    <title>Best Time to Buy and Sell Stock II | zuoyang&#39;s blog</title>
+    <title>Balanced Binary Tree | zuoyang&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="问题描述： Say you have an array for which the ith element is the price of a given stock on day i. Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy">
-<meta name="keywords" content="C++">
+    <meta name="description" content="问题描述： Given a binary tree, determine if it is height-balanced. For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never di">
+<meta name="keywords" content="C++,Binary Tree">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Best Time to Buy and Sell Stock II">
-<meta property="og:url" content="https://www.zuoyangblog.com/post/Best-Time-to-Buy-and-Sell-Stock-II">
+<meta property="og:title" content="Balanced Binary Tree">
+<meta property="og:url" content="https://www.zuoyangblog.com/post/Balanced-Binary-Tree.html">
 <meta property="og:site_name" content="zuoyang&#39;s blog">
-<meta property="og:description" content="问题描述： Say you have an array for which the ith element is the price of a given stock on day i. Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy">
+<meta property="og:description" content="问题描述： Given a binary tree, determine if it is height-balanced. For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never di">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-11-15T16:50:59.000Z">
+<meta property="og:updated_time" content="2018-11-15T16:28:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Best Time to Buy and Sell Stock II">
-<meta name="twitter:description" content="问题描述： Say you have an array for which the ith element is the price of a given stock on day i. Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy">
+<meta name="twitter:title" content="Balanced Binary Tree">
+<meta name="twitter:description" content="问题描述： Given a binary tree, determine if it is height-balanced. For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never di">
     
 
     
@@ -166,7 +166,7 @@ ga('send', 'pageview');
                 document.querySelector('style').textContent += "@media screen and (max-width: 1199px) and (min-width: 800px) { #main {margin: auto; width: 70%; display: block; float:none;}}"
                 </script>
             
-            <section id="main"><article id="post-Best-Time-to-Buy-and-Sell-Stock-II" class="article article-type-post" itemscope="" itemprop="blogPost">
+            <section id="main"><article id="post-Balanced-Binary-Tree" class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -174,7 +174,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name" style="color: #009688;font-size:1.5em;">
-            Best Time to Buy and Sell Stock II
+            Balanced Binary Tree
         </h1>
     
 
@@ -189,7 +189,7 @@ ga('send', 'pageview');
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="../tags/C/">C++</a>
+        <a class="tag-link" href="../tags/Binary-Tree/">Binary Tree</a>, <a class="tag-link" href="../tags/C/">C++</a>
     </div>
 
                         
@@ -207,12 +207,11 @@ ga('send', 'pageview');
         
         
             <p><strong>问题描述：</strong></p>
-<p>Say you have an array for which the ith element is the price of a given stock on day i.</p>
-<p>Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy one and sell one share of the stock multiple times). However, you may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).</p>
+<p>Given a binary tree, determine if it is height-balanced.</p>
+<p>For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.</p>
 <p><strong>解决思路：</strong></p>
-<p>依次将相邻的元素相减（后面减去前面）得到新的数组，再取新数组正数相加即可</p>
-<p><strong>代码：</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(prices.empty())</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; price_d(prices.size());</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; prices.size()<span class="number">-1</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            price_d[i] = prices[i+<span class="number">1</span>] - prices[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; price_d.size(); i ++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(price_d[i] &gt; <span class="number">0</span>)</span><br><span class="line">                max += price_d[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>首先设计一个求二叉树高度的函数，然后调用该函数比较左右子树的高度差即可。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for binary tree</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">height</span><span class="params">(TreeNode *root)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="literal">NULL</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> hr,hl;</span><br><span class="line">        hl = height(root-&gt;left);</span><br><span class="line">        hr = height(root-&gt;right);</span><br><span class="line">        <span class="keyword">int</span> h;</span><br><span class="line">        h =<span class="number">1</span> + (hl &gt; hr ? hl : hr);</span><br><span class="line">        <span class="keyword">return</span> h;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isBalanced</span><span class="params">(TreeNode *root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="literal">NULL</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">int</span> hl = height(root-&gt;left);</span><br><span class="line">        <span class="keyword">int</span> hr = height(root-&gt;right);</span><br><span class="line">        <span class="keyword">int</span> diff = hl - hr;</span><br><span class="line">        <span class="keyword">if</span>(diff &gt; <span class="number">1</span> || diff &lt; <span class="number">-1</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> isBalanced(root-&gt;left) &amp;&amp; isBalanced(root-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
             </div>
         
@@ -223,19 +222,19 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="Single-Number" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="ZigZag-Conversion.html" id="article-nav-newer" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Newer</strong>
             <div class="article-nav-title">
                 
-                    Single Number
+                    ZigZag Conversion
                 
             </div>
         </a>
     
     
-        <a href="Maximum-Depth-of-Binary-Tree" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="Majority-Element.html" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">Maximum Depth of Binary Tree</div>
+            <div class="article-nav-title">Majority Element</div>
         </a>
     
 </nav>
@@ -259,7 +258,7 @@ ga('send', 'pageview');
             repo: 'cheneyoung.github.io',
             owner: 'cheneyoung',
             admin: ['cheneyoung'],
-            id: "https://www.zuoyangblog.com/post/Best-Time-to-Buy-and-Sell-Stock-II".substr(19,50),      // Ensure uniqueness and length less than 50
+            id: "https://www.zuoyangblog.com/post/Balanced-Binary-Tree.html".substr(19,50),      // Ensure uniqueness and length less than 50
             distractionFreeMode: false  // Facebook-like distraction free mode
         })
 
@@ -297,7 +296,7 @@ ga('send', 'pageview');
             repo: 'cheneyoung.github.io',
             owner: 'cheneyoung',
             admin: ['cheneyoung'],
-            id: "https://www.zuoyangblog.com/post/Best-Time-to-Buy-and-Sell-Stock-II".substr(19,50),      // Ensure uniqueness and length less than 50
+            id: "https://www.zuoyangblog.com/post/Balanced-Binary-Tree.html".substr(19,50),      // Ensure uniqueness and length less than 50
             distractionFreeMode: false  // Facebook-like distraction free mode
         })
 

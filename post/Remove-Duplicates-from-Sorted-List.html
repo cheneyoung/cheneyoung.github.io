@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     
-    <title>Excel Sheet Column Number | zuoyang&#39;s blog</title>
+    <title>Remove Duplicates from Sorted List | zuoyang&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="问题描述： Related to question Excel Sheet Column Title Given a column title as appear in an Excel sheet, return its corresponding column number. For example: 1234567A -&amp;gt; 1B -&amp;gt; 2C -&amp;gt; 3...Z -&amp;gt; 2">
-<meta name="keywords" content="C++">
+    <meta name="description" content="问题描述： Given a sorted linked list, delete all duplicates such that each element appear only once. For example,Given 1-&amp;gt;1-&amp;gt;2, return 1-&amp;gt;2.Given 1-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;3, return 1-&amp;gt;2-&amp;gt;3.">
+<meta name="keywords" content="C++,List">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Excel Sheet Column Number">
-<meta property="og:url" content="https://www.zuoyangblog.com/post/Excel-Sheet-Column-Number">
+<meta property="og:title" content="Remove Duplicates from Sorted List">
+<meta property="og:url" content="https://www.zuoyangblog.com/post/Remove-Duplicates-from-Sorted-List.html">
 <meta property="og:site_name" content="zuoyang&#39;s blog">
-<meta property="og:description" content="问题描述： Related to question Excel Sheet Column Title Given a column title as appear in an Excel sheet, return its corresponding column number. For example: 1234567A -&amp;gt; 1B -&amp;gt; 2C -&amp;gt; 3...Z -&amp;gt; 2">
+<meta property="og:description" content="问题描述： Given a sorted linked list, delete all duplicates such that each element appear only once. For example,Given 1-&amp;gt;1-&amp;gt;2, return 1-&amp;gt;2.Given 1-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;3, return 1-&amp;gt;2-&amp;gt;3.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-11-15T16:14:30.000Z">
+<meta property="og:updated_time" content="2018-11-15T16:28:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Excel Sheet Column Number">
-<meta name="twitter:description" content="问题描述： Related to question Excel Sheet Column Title Given a column title as appear in an Excel sheet, return its corresponding column number. For example: 1234567A -&amp;gt; 1B -&amp;gt; 2C -&amp;gt; 3...Z -&amp;gt; 2">
+<meta name="twitter:title" content="Remove Duplicates from Sorted List">
+<meta name="twitter:description" content="问题描述： Given a sorted linked list, delete all duplicates such that each element appear only once. For example,Given 1-&amp;gt;1-&amp;gt;2, return 1-&amp;gt;2.Given 1-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;3, return 1-&amp;gt;2-&amp;gt;3.">
     
 
     
@@ -166,7 +166,7 @@ ga('send', 'pageview');
                 document.querySelector('style').textContent += "@media screen and (max-width: 1199px) and (min-width: 800px) { #main {margin: auto; width: 70%; display: block; float:none;}}"
                 </script>
             
-            <section id="main"><article id="post-Excel-Sheet-Column-Number" class="article article-type-post" itemscope="" itemprop="blogPost">
+            <section id="main"><article id="post-Remove-Duplicates-from-Sorted-List" class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -174,7 +174,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name" style="color: #009688;font-size:1.5em;">
-            Excel Sheet Column Number
+            Remove Duplicates from Sorted List
         </h1>
     
 
@@ -189,7 +189,7 @@ ga('send', 'pageview');
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="../tags/C/">C++</a>
+        <a class="tag-link" href="../tags/C/">C++</a>, <a class="tag-link" href="../tags/List/">List</a>
     </div>
 
                         
@@ -207,14 +207,12 @@ ga('send', 'pageview');
         
         
             <p><strong>问题描述：</strong></p>
-<p>Related to question Excel Sheet Column Title</p>
-<p>Given a column title as appear in an Excel sheet, return its corresponding column number.</p>
-<p>For example:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">A -&gt; <span class="number">1</span></span><br><span class="line">B -&gt; <span class="number">2</span></span><br><span class="line">C -&gt; <span class="number">3</span></span><br><span class="line">...</span><br><span class="line">Z -&gt; <span class="number">26</span></span><br><span class="line">AA -&gt; <span class="number">27</span></span><br><span class="line">AB -&gt; <span class="number">28</span></span><br></pre></td></tr></table></figure>
+<p>Given a sorted linked list, delete all duplicates such that each element appear only once.</p>
+<p>For example,<br>Given 1-&gt;1-&gt;2, return 1-&gt;2.<br>Given 1-&gt;1-&gt;2-&gt;3-&gt;3, return 1-&gt;2-&gt;3.</p>
 <p><strong>解决思路：</strong></p>
-<p>本题类似于进制转换，将一个字符串转化为一个十进制的数字，而要求的字符串可以看作是一个26进制的数字。</p>
-<p><strong>代码：</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">titleToNumber</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.empty())</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length()<span class="number">-1</span>; i ++)&#123;</span><br><span class="line">            n = (<span class="keyword">int</span>(s[i]-<span class="string">'A'</span>)+<span class="number">1</span>+n) * <span class="number">26</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        n += <span class="keyword">int</span>(s[s.length()<span class="number">-1</span>]-<span class="string">'A'</span>)+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> n;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>定义两个指针base和cmp,base指针指向被比较的结点，cmp指向base的后一个结点，由于链表是有序的，所以cmp找到第一个不等于base的结点之后，就分别将base和cmp后移。如果相等，只要将相等的结点删除即可。</p>
+<p><strong>代码:</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode *<span class="title">deleteDuplicates</span><span class="params">(ListNode *head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="literal">NULL</span> || head-&gt;next == <span class="literal">NULL</span>)</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        ListNode *base,*cmp;</span><br><span class="line">        base = head;</span><br><span class="line">        cmp = base-&gt;next;</span><br><span class="line">        <span class="keyword">while</span>(cmp != <span class="literal">NULL</span>)&#123;</span><br><span class="line">            ListNode *tmp;</span><br><span class="line">            tmp = cmp-&gt;next;</span><br><span class="line">            <span class="keyword">if</span>(cmp-&gt;val == base-&gt;val)&#123;</span><br><span class="line">                base-&gt;next = tmp;</span><br><span class="line">                <span class="built_in">free</span>(cmp);</span><br><span class="line">                cmp = tmp;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                base = cmp;</span><br><span class="line">                cmp = tmp;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
             </div>
         
@@ -225,19 +223,19 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="Palindrome-Number" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="Linked-List-Cycle.html" id="article-nav-newer" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Newer</strong>
             <div class="article-nav-title">
                 
-                    Palindrome Number
+                    Linked List Cycle
                 
             </div>
         </a>
     
     
-        <a href="2Sum" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="ZigZag-Conversion.html" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">2Sum</div>
+            <div class="article-nav-title">ZigZag Conversion</div>
         </a>
     
 </nav>
@@ -261,7 +259,7 @@ ga('send', 'pageview');
             repo: 'cheneyoung.github.io',
             owner: 'cheneyoung',
             admin: ['cheneyoung'],
-            id: "https://www.zuoyangblog.com/post/Excel-Sheet-Column-Number".substr(19,50),      // Ensure uniqueness and length less than 50
+            id: "https://www.zuoyangblog.com/post/Remove-Duplicates-from-Sorted-List.html".substr(19,50),      // Ensure uniqueness and length less than 50
             distractionFreeMode: false  // Facebook-like distraction free mode
         })
 
@@ -299,7 +297,7 @@ ga('send', 'pageview');
             repo: 'cheneyoung.github.io',
             owner: 'cheneyoung',
             admin: ['cheneyoung'],
-            id: "https://www.zuoyangblog.com/post/Excel-Sheet-Column-Number".substr(19,50),      // Ensure uniqueness and length less than 50
+            id: "https://www.zuoyangblog.com/post/Remove-Duplicates-from-Sorted-List.html".substr(19,50),      // Ensure uniqueness and length less than 50
             distractionFreeMode: false  // Facebook-like distraction free mode
         })
 

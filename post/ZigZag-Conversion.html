@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     
-    <title>岛屿个数 | zuoyang&#39;s blog</title>
+    <title>ZigZag Conversion | zuoyang&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="问题描述： 给一个0,1矩阵，求不同的岛屿的个数。 0代表海，1代表岛，如果两个1相邻，那么这两个1属于同一个岛。我们只考虑上下左右为相邻。 样例 在矩阵： 1234567[  [1, 1, 0, 0, 0],  [0, 1, 0, 0, 1],  [0, 0, 0, 1, 1],  [0, 0, 0, 0, 0],  [0, 0, 0, 0, 1]] 中有 3 个岛. 解题思路：深度遍历 dfs">
-<meta name="keywords" content="C++,DFS">
+    <meta name="description" content="问题描述： The string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility) P   A   H   NA P L S">
+<meta name="keywords" content="C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="岛屿个数">
-<meta property="og:url" content="https://www.zuoyangblog.com/post/岛屿个数">
+<meta property="og:title" content="ZigZag Conversion">
+<meta property="og:url" content="https://www.zuoyangblog.com/post/ZigZag-Conversion.html">
 <meta property="og:site_name" content="zuoyang&#39;s blog">
-<meta property="og:description" content="问题描述： 给一个0,1矩阵，求不同的岛屿的个数。 0代表海，1代表岛，如果两个1相邻，那么这两个1属于同一个岛。我们只考虑上下左右为相邻。 样例 在矩阵： 1234567[  [1, 1, 0, 0, 0],  [0, 1, 0, 0, 1],  [0, 0, 0, 1, 1],  [0, 0, 0, 0, 0],  [0, 0, 0, 0, 1]] 中有 3 个岛. 解题思路：深度遍历 dfs">
+<meta property="og:description" content="问题描述： The string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility) P   A   H   NA P L S">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-11-15T16:28:09.000Z">
+<meta property="og:updated_time" content="2018-11-15T16:25:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="岛屿个数">
-<meta name="twitter:description" content="问题描述： 给一个0,1矩阵，求不同的岛屿的个数。 0代表海，1代表岛，如果两个1相邻，那么这两个1属于同一个岛。我们只考虑上下左右为相邻。 样例 在矩阵： 1234567[  [1, 1, 0, 0, 0],  [0, 1, 0, 0, 1],  [0, 0, 0, 1, 1],  [0, 0, 0, 0, 0],  [0, 0, 0, 0, 1]] 中有 3 个岛. 解题思路：深度遍历 dfs">
+<meta name="twitter:title" content="ZigZag Conversion">
+<meta name="twitter:description" content="问题描述： The string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility) P   A   H   NA P L S">
     
 
     
@@ -166,7 +166,7 @@ ga('send', 'pageview');
                 document.querySelector('style').textContent += "@media screen and (max-width: 1199px) and (min-width: 800px) { #main {margin: auto; width: 70%; display: block; float:none;}}"
                 </script>
             
-            <section id="main"><article id="post-岛屿个数" class="article article-type-post" itemscope="" itemprop="blogPost">
+            <section id="main"><article id="post-ZigZag-Conversion" class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -174,7 +174,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name" style="color: #009688;font-size:1.5em;">
-            岛屿个数
+            ZigZag Conversion
         </h1>
     
 
@@ -189,7 +189,7 @@ ga('send', 'pageview');
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="../tags/C/">C++</a>, <a class="tag-link" href="../tags/DFS/">DFS</a>
+        <a class="tag-link" href="../tags/C/">C++</a>
     </div>
 
                         
@@ -207,15 +207,13 @@ ga('send', 'pageview');
         
         
             <p><strong>问题描述：</strong></p>
-<p>给一个0,1矩阵，求不同的岛屿的个数。</p>
-<p>0代表海，1代表岛，如果两个1相邻，那么这两个1属于同一个岛。我们只考虑上下左右为相邻。</p>
-<p>样例</p>
-<p>在矩阵：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  [<span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">  [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>],</span><br><span class="line">  [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">  [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">  [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<p>中有 <code>3</code> 个岛.</p>
-<p>解题思路：深度遍历 dfs</p>
+<p>The string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)</p>
+<p>P   A   H   N<br>A P L S I I G<br>Y   I   R<br>And then read line by line: “PAHNAPLSIIGYIR”<br>Write the code that will take a string and make this conversion given a number of rows:</p>
+<p>string convert(string text, int nRows);<br>convert(“PAYPALISHIRING”, 3) should return “PAHNAPLSIIGYIR”.</p>
+<p><strong>解决思路：</strong></p>
+<p>找出规律即可，每次的周期为2<em>nRows-2,但是在1到nRows-1的行数还需要判断周期为2</em>（nRows-1-i）的元素，i是处于1到nRows-1的行数。</p>
 <p><strong>代码：</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * @param grid a boolean 2D matrix</span></span><br><span class="line"><span class="comment">     * @return an integer</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">int</span> step[<span class="number">4</span>][<span class="number">2</span>] = &#123;&#123;<span class="number">-1</span>,<span class="number">0</span>&#125;,&#123;<span class="number">1</span>,<span class="number">0</span>&#125;,&#123;<span class="number">0</span>,<span class="number">-1</span>&#125;,&#123;<span class="number">0</span>,<span class="number">1</span>&#125;&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numIslands</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt;&gt;&amp; grid)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Write your code here</span></span><br><span class="line">        <span class="keyword">int</span> n = grid.size();</span><br><span class="line">        <span class="keyword">if</span>(n &lt; <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> m = grid[<span class="number">0</span>].size();</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; m; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(grid[i][j] == <span class="literal">true</span>)&#123;</span><br><span class="line">                    dfs(grid,i,j);</span><br><span class="line">                    count++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt;&gt;&amp; grid, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">        grid[i][j] = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">4</span>; k++)&#123;</span><br><span class="line">            <span class="keyword">int</span> x = step[k][<span class="number">0</span>] + i;</span><br><span class="line">            <span class="keyword">int</span> y = step[k][<span class="number">1</span>] + j;</span><br><span class="line">            <span class="keyword">if</span>(x &gt;= <span class="number">0</span> &amp;&amp; x &lt; grid.size() &amp;&amp; y &gt;= <span class="number">0</span> &amp;&amp; y &lt; grid[<span class="number">0</span>].size() &amp;&amp; grid[x][y] == <span class="literal">true</span>)&#123;</span><br><span class="line">                dfs(grid,x,y);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">convert</span><span class="params">(<span class="built_in">string</span> s, <span class="keyword">int</span> nRows)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.empty() || nRows &lt;= <span class="number">1</span> || s.length() &lt; nRows)</span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line">        <span class="built_in">string</span> result;</span><br><span class="line">        <span class="keyword">int</span> cycle = <span class="number">2</span> * nRows - <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nRows; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; s.length(); j += cycle)&#123;</span><br><span class="line">                result.push_back(s[j]);</span><br><span class="line">                <span class="keyword">if</span>( i &gt; <span class="number">0</span> &amp;&amp; i &lt; nRows<span class="number">-1</span>)&#123;</span><br><span class="line">                    <span class="keyword">if</span> (j + <span class="number">2</span> *(nRows - <span class="number">1</span> - i) &lt; s.length())</span><br><span class="line">                        result.push_back(s[j + <span class="number">2</span> *(nRows - <span class="number">1</span> - i)]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
             </div>
         
@@ -226,19 +224,19 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="有效的括号序列" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="Remove-Duplicates-from-Sorted-List.html" id="article-nav-newer" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Newer</strong>
             <div class="article-nav-title">
                 
-                    有效的括号序列
+                    Remove Duplicates from Sorted List
                 
             </div>
         </a>
     
     
-        <a href="最后一个单词的长度" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="Balanced-Binary-Tree.html" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">最后一个单词的长度</div>
+            <div class="article-nav-title">Balanced Binary Tree</div>
         </a>
     
 </nav>
@@ -262,7 +260,7 @@ ga('send', 'pageview');
             repo: 'cheneyoung.github.io',
             owner: 'cheneyoung',
             admin: ['cheneyoung'],
-            id: "https://www.zuoyangblog.com/post/岛屿个数".substr(19,50),      // Ensure uniqueness and length less than 50
+            id: "https://www.zuoyangblog.com/post/ZigZag-Conversion.html".substr(19,50),      // Ensure uniqueness and length less than 50
             distractionFreeMode: false  // Facebook-like distraction free mode
         })
 
@@ -300,7 +298,7 @@ ga('send', 'pageview');
             repo: 'cheneyoung.github.io',
             owner: 'cheneyoung',
             admin: ['cheneyoung'],
-            id: "https://www.zuoyangblog.com/post/岛屿个数".substr(19,50),      // Ensure uniqueness and length less than 50
+            id: "https://www.zuoyangblog.com/post/ZigZag-Conversion.html".substr(19,50),      // Ensure uniqueness and length less than 50
             distractionFreeMode: false  // Facebook-like distraction free mode
         })
 

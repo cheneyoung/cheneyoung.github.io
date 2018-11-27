@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     
-    <title>最后一个单词的长度 | zuoyang&#39;s blog</title>
+    <title>Single Number | zuoyang&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="问题描述： 给定一个字符串， 包含大小写字母、空格&amp;#39; &amp;#39;，请返回其最后一个单词的长度。 如果不存在最后一个单词，请返回 0 。 样例： 给定 s = &amp;quot;Hello World&amp;quot;，返回 5。 代码： 123456789101112131415161718192021222324252627282930313233class Solution &amp;#123;publi">
-<meta name="keywords" content="C++,String">
+    <meta name="description" content="问题描述： Given an array of integers, every element appears twice except for one. Find that single one. Note:Your algorithm should have a linear runtime complexity. Could you implement it without using ex">
+<meta name="keywords" content="C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="最后一个单词的长度">
-<meta property="og:url" content="https://www.zuoyangblog.com/post/最后一个单词的长度">
+<meta property="og:title" content="Single Number">
+<meta property="og:url" content="https://www.zuoyangblog.com/post/Single-Number.html">
 <meta property="og:site_name" content="zuoyang&#39;s blog">
-<meta property="og:description" content="问题描述： 给定一个字符串， 包含大小写字母、空格&amp;#39; &amp;#39;，请返回其最后一个单词的长度。 如果不存在最后一个单词，请返回 0 。 样例： 给定 s = &amp;quot;Hello World&amp;quot;，返回 5。 代码： 123456789101112131415161718192021222324252627282930313233class Solution &amp;#123;publi">
+<meta property="og:description" content="问题描述： Given an array of integers, every element appears twice except for one. Find that single one. Note:Your algorithm should have a linear runtime complexity. Could you implement it without using ex">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-11-15T16:28:05.000Z">
+<meta property="og:updated_time" content="2018-11-15T16:50:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="最后一个单词的长度">
-<meta name="twitter:description" content="问题描述： 给定一个字符串， 包含大小写字母、空格&amp;#39; &amp;#39;，请返回其最后一个单词的长度。 如果不存在最后一个单词，请返回 0 。 样例： 给定 s = &amp;quot;Hello World&amp;quot;，返回 5。 代码： 123456789101112131415161718192021222324252627282930313233class Solution &amp;#123;publi">
+<meta name="twitter:title" content="Single Number">
+<meta name="twitter:description" content="问题描述： Given an array of integers, every element appears twice except for one. Find that single one. Note:Your algorithm should have a linear runtime complexity. Could you implement it without using ex">
     
 
     
@@ -166,7 +166,7 @@ ga('send', 'pageview');
                 document.querySelector('style').textContent += "@media screen and (max-width: 1199px) and (min-width: 800px) { #main {margin: auto; width: 70%; display: block; float:none;}}"
                 </script>
             
-            <section id="main"><article id="post-最后一个单词的长度" class="article article-type-post" itemscope="" itemprop="blogPost">
+            <section id="main"><article id="post-Single-Number" class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -174,7 +174,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name" style="color: #009688;font-size:1.5em;">
-            最后一个单词的长度
+            Single Number
         </h1>
     
 
@@ -189,7 +189,7 @@ ga('send', 'pageview');
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="../tags/C/">C++</a>, <a class="tag-link" href="../tags/String/">String</a>
+        <a class="tag-link" href="../tags/C/">C++</a>
     </div>
 
                         
@@ -207,12 +207,12 @@ ga('send', 'pageview');
         
         
             <p><strong>问题描述：</strong></p>
-<p>给定一个字符串， 包含大小写字母、空格<code>&#39; &#39;</code>，请返回其最后一个单词的长度。</p>
-<p>如果不存在最后一个单词，请返回 <code>0</code> 。</p>
-<p>样例：</p>
-<p>给定 s = <code>&quot;Hello World&quot;</code>，返回 <code>5</code>。</p>
+<p>Given an array of integers, every element appears twice except for one. Find that single one.</p>
+<p>Note:<br>Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?</p>
+<p><strong>解决思路：</strong></p>
+<p>本题主要是求出一组数组中唯一个没有相同元素的数字，这里要求时间复杂度为O(n)，空间复杂度为O(1)，所以我们只需遍历一次数组就必须得到结果，并且不能使用其他额外的内存空间。这里采用异或运算，能够保证相同的元素运算结果为0，所以最终便能找个那个唯一的数字。</p>
 <p><strong>代码：</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * @param s A string</span></span><br><span class="line"><span class="comment">     * @return the length of last word</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">lengthOfLastWord</span><span class="params">(<span class="built_in">string</span>&amp; s)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Write your code here</span></span><br><span class="line">        <span class="keyword">int</span>  n = s.length();</span><br><span class="line">        <span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(n &lt; <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> i = n - <span class="number">1</span>; </span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i] == <span class="string">' '</span>)</span><br><span class="line">                i--;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(i &gt;= <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">while</span>(s[i] != <span class="string">' '</span> &amp;&amp; i &gt;= <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                len++;</span><br><span class="line">                i--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> len;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> len;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">singleNumber</span><span class="params">(<span class="keyword">int</span> A[], <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; n; i++)</span><br><span class="line"> </span><br><span class="line">            result ^= A[i];</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
             </div>
         
@@ -223,15 +223,20 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="岛屿个数" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="Ceph_introduction.html" id="article-nav-newer" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Newer</strong>
             <div class="article-nav-title">
                 
-                    岛屿个数
+                    第一篇：Ceph简介
                 
             </div>
         </a>
     
+    
+        <a href="Best-Time-to-Buy-and-Sell-Stock-II.html" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">Best Time to Buy and Sell Stock II</div>
+        </a>
     
 </nav>
 
@@ -254,7 +259,7 @@ ga('send', 'pageview');
             repo: 'cheneyoung.github.io',
             owner: 'cheneyoung',
             admin: ['cheneyoung'],
-            id: "https://www.zuoyangblog.com/post/最后一个单词的长度".substr(19,50),      // Ensure uniqueness and length less than 50
+            id: "https://www.zuoyangblog.com/post/Single-Number.html".substr(19,50),      // Ensure uniqueness and length less than 50
             distractionFreeMode: false  // Facebook-like distraction free mode
         })
 
@@ -292,7 +297,7 @@ ga('send', 'pageview');
             repo: 'cheneyoung.github.io',
             owner: 'cheneyoung',
             admin: ['cheneyoung'],
-            id: "https://www.zuoyangblog.com/post/最后一个单词的长度".substr(19,50),      // Ensure uniqueness and length less than 50
+            id: "https://www.zuoyangblog.com/post/Single-Number.html".substr(19,50),      // Ensure uniqueness and length less than 50
             distractionFreeMode: false  // Facebook-like distraction free mode
         })
 

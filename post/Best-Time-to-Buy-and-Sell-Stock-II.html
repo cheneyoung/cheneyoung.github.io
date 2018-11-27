@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     
-    <title>Unique Binary Search Trees | zuoyang&#39;s blog</title>
+    <title>Best Time to Buy and Sell Stock II | zuoyang&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="问题描述： Given n, how many structurally unique BST’s (binary search trees) that store values 1…n? For example,Given n = 3, there are a total of 5 unique BST’s. 123451         3     3      2      1 \">
-<meta name="keywords" content="C++,Binary Tree,BST">
+    <meta name="description" content="问题描述： Say you have an array for which the ith element is the price of a given stock on day i. Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy">
+<meta name="keywords" content="C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Unique Binary Search Trees">
-<meta property="og:url" content="https://www.zuoyangblog.com/post/Unique-Binary-Search-Trees">
+<meta property="og:title" content="Best Time to Buy and Sell Stock II">
+<meta property="og:url" content="https://www.zuoyangblog.com/post/Best-Time-to-Buy-and-Sell-Stock-II.html">
 <meta property="og:site_name" content="zuoyang&#39;s blog">
-<meta property="og:description" content="问题描述： Given n, how many structurally unique BST’s (binary search trees) that store values 1…n? For example,Given n = 3, there are a total of 5 unique BST’s. 123451         3     3      2      1 \">
+<meta property="og:description" content="问题描述： Say you have an array for which the ith element is the price of a given stock on day i. Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2018-11-15T16:50:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Unique Binary Search Trees">
-<meta name="twitter:description" content="问题描述： Given n, how many structurally unique BST’s (binary search trees) that store values 1…n? For example,Given n = 3, there are a total of 5 unique BST’s. 123451         3     3      2      1 \">
+<meta name="twitter:title" content="Best Time to Buy and Sell Stock II">
+<meta name="twitter:description" content="问题描述： Say you have an array for which the ith element is the price of a given stock on day i. Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy">
     
 
     
@@ -166,7 +166,7 @@ ga('send', 'pageview');
                 document.querySelector('style').textContent += "@media screen and (max-width: 1199px) and (min-width: 800px) { #main {margin: auto; width: 70%; display: block; float:none;}}"
                 </script>
             
-            <section id="main"><article id="post-Unique-Binary-Search-Trees" class="article article-type-post" itemscope="" itemprop="blogPost">
+            <section id="main"><article id="post-Best-Time-to-Buy-and-Sell-Stock-II" class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -174,7 +174,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name" style="color: #009688;font-size:1.5em;">
-            Unique Binary Search Trees
+            Best Time to Buy and Sell Stock II
         </h1>
     
 
@@ -189,7 +189,7 @@ ga('send', 'pageview');
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="../tags/BST/">BST</a>, <a class="tag-link" href="../tags/Binary-Tree/">Binary Tree</a>, <a class="tag-link" href="../tags/C/">C++</a>
+        <a class="tag-link" href="../tags/C/">C++</a>
     </div>
 
                         
@@ -207,13 +207,12 @@ ga('send', 'pageview');
         
         
             <p><strong>问题描述：</strong></p>
-<p>Given n, how many structurally unique BST’s (binary search trees) that store values 1…n?</p>
-<p>For example,<br>Given n = 3, there are a total of 5 unique BST’s.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>         <span class="number">3</span>     <span class="number">3</span>      <span class="number">2</span>      <span class="number">1</span></span><br><span class="line"> \       /     /      / \      \</span><br><span class="line">  <span class="number">3</span>     <span class="number">2</span>     <span class="number">1</span>      <span class="number">1</span>   <span class="number">3</span>      <span class="number">2</span></span><br><span class="line"> /     /       \                 \</span><br><span class="line"><span class="number">2</span>     <span class="number">1</span>         <span class="number">2</span>                 <span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p>Say you have an array for which the ith element is the price of a given stock on day i.</p>
+<p>Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy one and sell one share of the stock multiple times). However, you may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).</p>
 <p><strong>解决思路：</strong></p>
-<p>首先分析一下当n=0,1,2这三种情况下BTS个数，我们可以得到当n=0,1时，BTS个数为1，当n=2时，BTS个数为2.这就可以转化为一个递归求解的问题，我们将根结点从1到n依次代替，这样左右子树结点的个数就会发生变化，我们在分别求解左右子树BTS的个数，以此递归求解便可得到BTS的总数目。</p>
+<p>依次将相邻的元素相减（后面减去前面）得到新的数组，再取新数组正数相加即可</p>
 <p><strong>代码：</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numTrees</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">1</span> || n == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> num = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">            num += numTrees(i<span class="number">-1</span>) * numTrees(n-i);</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(prices.empty())</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; price_d(prices.size());</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; prices.size()<span class="number">-1</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            price_d[i] = prices[i+<span class="number">1</span>] - prices[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; price_d.size(); i ++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(price_d[i] &gt; <span class="number">0</span>)</span><br><span class="line">                max += price_d[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
             </div>
         
@@ -224,19 +223,19 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="Same-Tree" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="Single-Number.html" id="article-nav-newer" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Newer</strong>
             <div class="article-nav-title">
                 
-                    Same Tree
+                    Single Number
                 
             </div>
         </a>
     
     
-        <a href="Binary-Tree-Level-Order-Traversal-II" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="Maximum-Depth-of-Binary-Tree.html" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">Binary Tree Level Order Traversal II</div>
+            <div class="article-nav-title">Maximum Depth of Binary Tree</div>
         </a>
     
 </nav>
@@ -260,7 +259,7 @@ ga('send', 'pageview');
             repo: 'cheneyoung.github.io',
             owner: 'cheneyoung',
             admin: ['cheneyoung'],
-            id: "https://www.zuoyangblog.com/post/Unique-Binary-Search-Trees".substr(19,50),      // Ensure uniqueness and length less than 50
+            id: "https://www.zuoyangblog.com/post/Best-Time-to-Buy-and-Sell-Stock-II.html".substr(19,50),      // Ensure uniqueness and length less than 50
             distractionFreeMode: false  // Facebook-like distraction free mode
         })
 
@@ -298,7 +297,7 @@ ga('send', 'pageview');
             repo: 'cheneyoung.github.io',
             owner: 'cheneyoung',
             admin: ['cheneyoung'],
-            id: "https://www.zuoyangblog.com/post/Unique-Binary-Search-Trees".substr(19,50),      // Ensure uniqueness and length less than 50
+            id: "https://www.zuoyangblog.com/post/Best-Time-to-Buy-and-Sell-Stock-II.html".substr(19,50),      // Ensure uniqueness and length less than 50
             distractionFreeMode: false  // Facebook-like distraction free mode
         })
 
