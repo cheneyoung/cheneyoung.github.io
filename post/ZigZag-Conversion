@@ -9,7 +9,7 @@
 <meta name="keywords" content="C++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ZigZag Conversion">
-<meta property="og:url" content="https://www.zuoyangblog.com/post/leetcode/ZigZag-Conversion">
+<meta property="og:url" content="https://www.zuoyangblog.com/post/ZigZag-Conversion">
 <meta property="og:site_name" content="zuoyang&#39;s blog">
 <meta property="og:description" content="问题描述： The string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility) P   A   H   NA P L S">
 <meta property="og:locale" content="en">
@@ -22,22 +22,22 @@
     
 
     
-        <link rel="icon" href="../../css/images/horse.jpg">
+        <link rel="icon" href="../css/images/horse.jpg">
     
 
-    <link rel="stylesheet" href="../../libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../libs/open-sans/styles.css">
-    <link rel="stylesheet" href="../../libs/source-code-pro/styles.css">
+    <link rel="stylesheet" href="../libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../libs/open-sans/styles.css">
+    <link rel="stylesheet" href="../libs/source-code-pro/styles.css">
 
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
-    <script src="../../libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="../libs/jquery/2.1.3/jquery.min.js"></script>
     
     
-        <link rel="stylesheet" href="../../libs/lightgallery/css/lightgallery.min.css">
+        <link rel="stylesheet" href="../libs/lightgallery/css/lightgallery.min.css">
     
     
-        <link rel="stylesheet" href="../../libs/justified-gallery/justifiedGallery.min.css">
+        <link rel="stylesheet" href="../libs/justified-gallery/justifiedGallery.min.css">
     
     
         <script type="text/javascript">
@@ -63,21 +63,21 @@ ga('send', 'pageview');
         <header id="header">
     <div id="header-main" class="header-inner">
         <div class="outer">
-            <a href="../../index.html" id="logo">
+            <a href="../index.html" id="logo">
                 <i class="logo"></i>
                 <span class="site-title">zuoyang&#39;s blog</span>
             </a>
             <nav id="main-nav">
                 
-                    <a class="main-nav-link" href="../../.">Home</a>
+                    <a class="main-nav-link" href="../.">Home</a>
                 
-                    <a class="main-nav-link" href="../../archives">Archives</a>
+                    <a class="main-nav-link" href="../archives">Archives</a>
                 
-                    <a class="main-nav-link" href="../../categories">Categories</a>
+                    <a class="main-nav-link" href="../categories">Categories</a>
                 
-                    <a class="main-nav-link" href="../../tags">Tags</a>
+                    <a class="main-nav-link" href="../tags">Tags</a>
                 
-                    <a class="main-nav-link" href="../../about">About</a>
+                    <a class="main-nav-link" href="../about">About</a>
                 
             </nav>
             
@@ -85,7 +85,7 @@ ga('send', 'pageview');
                 <nav id="sub-nav">
                     <div class="profile" id="profile-nav">
                         <a id="profile-anchor" href="javascript:;">
-                            <img class="avatar" src="../../css/images/profile_pic.jpg">
+                            <img class="avatar" src="../css/images/profile_pic.jpg">
                             <i class="fa fa-caret-down"></i>
                         </a>
                     </div>
@@ -120,12 +120,12 @@ ga('send', 'pageview');
             UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
-        CONTENT_URL: '../../content.json',
+        CONTENT_URL: '../content.json',
     };
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
-<script src="../../js/insight.js"></script>
+<script src="../js/insight.js"></script>
 
 </div>
         </div>
@@ -134,15 +134,15 @@ ga('send', 'pageview');
         <table class="menu outer">
             <tr>
                 
-                    <td><a class="main-nav-link" href="../../.">Home</a></td>
+                    <td><a class="main-nav-link" href="../.">Home</a></td>
                 
-                    <td><a class="main-nav-link" href="../../archives">Archives</a></td>
+                    <td><a class="main-nav-link" href="../archives">Archives</a></td>
                 
-                    <td><a class="main-nav-link" href="../../categories">Categories</a></td>
+                    <td><a class="main-nav-link" href="../categories">Categories</a></td>
                 
-                    <td><a class="main-nav-link" href="../../tags">Tags</a></td>
+                    <td><a class="main-nav-link" href="../tags">Tags</a></td>
                 
-                    <td><a class="main-nav-link" href="../../about">About</a></td>
+                    <td><a class="main-nav-link" href="../about">About</a></td>
                 
                 <td>
                     
@@ -183,13 +183,13 @@ ga('send', 'pageview');
                         
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="../../categories/leetcode/">leetcode</a>
+        <a class="article-category-link" href="../categories/leetcode/">leetcode</a>
     </div>
 
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="../../tags/C/">C++</a>
+        <a class="tag-link" href="../tags/C/">C++</a>
     </div>
 
                         
@@ -260,7 +260,7 @@ ga('send', 'pageview');
             repo: 'cheneyoung.github.io',
             owner: 'cheneyoung',
             admin: ['cheneyoung'],
-            id: "https://www.zuoyangblog.com/post/leetcode/ZigZag-Conversion".substr(19,50),      // Ensure uniqueness and length less than 50
+            id: "https://www.zuoyangblog.com/post/ZigZag-Conversion".substr(19,50),      // Ensure uniqueness and length less than 50
             distractionFreeMode: false  // Facebook-like distraction free mode
         })
 
@@ -298,7 +298,7 @@ ga('send', 'pageview');
             repo: 'cheneyoung.github.io',
             owner: 'cheneyoung',
             admin: ['cheneyoung'],
-            id: "https://www.zuoyangblog.com/post/leetcode/ZigZag-Conversion".substr(19,50),      // Ensure uniqueness and length less than 50
+            id: "https://www.zuoyangblog.com/post/ZigZag-Conversion".substr(19,50),      // Ensure uniqueness and length less than 50
             distractionFreeMode: false  // Facebook-like distraction free mode
         })
 
@@ -309,24 +309,24 @@ ga('send', 'pageview');
 
 
     
-        <script src="../../libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="../../libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="../../libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="../../libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="../../libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="../../libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="../../libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="../../libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="../../libs/lightgallery/js/lg-video.min.js"></script>
+        <script src="../libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="../libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="../libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="../libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="../libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="../libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="../libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="../libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="../libs/lightgallery/js/lg-video.min.js"></script>
     
     
-        <script src="../../libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+        <script src="../libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
     
 
 
 
 <!-- Custom Scripts -->
-<script src="../../js/main.js"></script>
+<script src="../js/main.js"></script>
 
     </div>
 </body>

@@ -9,7 +9,7 @@
 <meta name="keywords" content="ceph">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第一篇：Ceph简介">
-<meta property="og:url" content="https://www.zuoyangblog.com/post/ceph/Ceph_introduction">
+<meta property="og:url" content="https://www.zuoyangblog.com/post/Ceph_introduction">
 <meta property="og:site_name" content="zuoyang&#39;s blog">
 <meta property="og:description" content="Ceph架构简介最近工作中要使用ceph作为底层存储架构，故对其进行了一番调研，本篇乃ceph系列的第一篇。 CephCeph是一个统一的分布式存储系统，设计初衷是提供较好的性能、可靠性和可扩展性。 Ceph项目最早起源于Sage就读博士期间的工作（最早的成果于2004年发表），并随后贡献给开源社区。在经过了数年的发展之后，目前已得到众多云计算厂商的支持并被广泛应用。RedHat及OpenStac">
 <meta property="og:locale" content="en">
@@ -26,22 +26,22 @@
     
 
     
-        <link rel="icon" href="../../css/images/horse.jpg">
+        <link rel="icon" href="../css/images/horse.jpg">
     
 
-    <link rel="stylesheet" href="../../libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../libs/open-sans/styles.css">
-    <link rel="stylesheet" href="../../libs/source-code-pro/styles.css">
+    <link rel="stylesheet" href="../libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../libs/open-sans/styles.css">
+    <link rel="stylesheet" href="../libs/source-code-pro/styles.css">
 
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
-    <script src="../../libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="../libs/jquery/2.1.3/jquery.min.js"></script>
     
     
-        <link rel="stylesheet" href="../../libs/lightgallery/css/lightgallery.min.css">
+        <link rel="stylesheet" href="../libs/lightgallery/css/lightgallery.min.css">
     
     
-        <link rel="stylesheet" href="../../libs/justified-gallery/justifiedGallery.min.css">
+        <link rel="stylesheet" href="../libs/justified-gallery/justifiedGallery.min.css">
     
     
         <script type="text/javascript">
@@ -67,21 +67,21 @@ ga('send', 'pageview');
         <header id="header">
     <div id="header-main" class="header-inner">
         <div class="outer">
-            <a href="../../index.html" id="logo">
+            <a href="../index.html" id="logo">
                 <i class="logo"></i>
                 <span class="site-title">zuoyang&#39;s blog</span>
             </a>
             <nav id="main-nav">
                 
-                    <a class="main-nav-link" href="../../.">Home</a>
+                    <a class="main-nav-link" href="../.">Home</a>
                 
-                    <a class="main-nav-link" href="../../archives">Archives</a>
+                    <a class="main-nav-link" href="../archives">Archives</a>
                 
-                    <a class="main-nav-link" href="../../categories">Categories</a>
+                    <a class="main-nav-link" href="../categories">Categories</a>
                 
-                    <a class="main-nav-link" href="../../tags">Tags</a>
+                    <a class="main-nav-link" href="../tags">Tags</a>
                 
-                    <a class="main-nav-link" href="../../about">About</a>
+                    <a class="main-nav-link" href="../about">About</a>
                 
             </nav>
             
@@ -89,7 +89,7 @@ ga('send', 'pageview');
                 <nav id="sub-nav">
                     <div class="profile" id="profile-nav">
                         <a id="profile-anchor" href="javascript:;">
-                            <img class="avatar" src="../../css/images/profile_pic.jpg">
+                            <img class="avatar" src="../css/images/profile_pic.jpg">
                             <i class="fa fa-caret-down"></i>
                         </a>
                     </div>
@@ -124,12 +124,12 @@ ga('send', 'pageview');
             UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
-        CONTENT_URL: '../../content.json',
+        CONTENT_URL: '../content.json',
     };
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
-<script src="../../js/insight.js"></script>
+<script src="../js/insight.js"></script>
 
 </div>
         </div>
@@ -138,15 +138,15 @@ ga('send', 'pageview');
         <table class="menu outer">
             <tr>
                 
-                    <td><a class="main-nav-link" href="../../.">Home</a></td>
+                    <td><a class="main-nav-link" href="../.">Home</a></td>
                 
-                    <td><a class="main-nav-link" href="../../archives">Archives</a></td>
+                    <td><a class="main-nav-link" href="../archives">Archives</a></td>
                 
-                    <td><a class="main-nav-link" href="../../categories">Categories</a></td>
+                    <td><a class="main-nav-link" href="../categories">Categories</a></td>
                 
-                    <td><a class="main-nav-link" href="../../tags">Tags</a></td>
+                    <td><a class="main-nav-link" href="../tags">Tags</a></td>
                 
-                    <td><a class="main-nav-link" href="../../about">About</a></td>
+                    <td><a class="main-nav-link" href="../about">About</a></td>
                 
                 <td>
                     
@@ -187,13 +187,13 @@ ga('send', 'pageview');
                         
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="../../categories/ceph/">ceph</a>
+        <a class="article-category-link" href="../categories/ceph/">ceph</a>
     </div>
 
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="../../tags/ceph/">ceph</a>
+        <a class="tag-link" href="../tags/ceph/">ceph</a>
     </div>
 
                         
@@ -372,7 +372,7 @@ ga('send', 'pageview');
         </a>
     
     
-        <a href="../leetcode/Single-Number" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="Single-Number" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
             <div class="article-nav-title">Single Number</div>
         </a>
@@ -398,7 +398,7 @@ ga('send', 'pageview');
             repo: 'cheneyoung.github.io',
             owner: 'cheneyoung',
             admin: ['cheneyoung'],
-            id: "https://www.zuoyangblog.com/post/ceph/Ceph_introduction".substr(19,50),      // Ensure uniqueness and length less than 50
+            id: "https://www.zuoyangblog.com/post/Ceph_introduction".substr(19,50),      // Ensure uniqueness and length less than 50
             distractionFreeMode: false  // Facebook-like distraction free mode
         })
 
@@ -436,7 +436,7 @@ ga('send', 'pageview');
             repo: 'cheneyoung.github.io',
             owner: 'cheneyoung',
             admin: ['cheneyoung'],
-            id: "https://www.zuoyangblog.com/post/ceph/Ceph_introduction".substr(19,50),      // Ensure uniqueness and length less than 50
+            id: "https://www.zuoyangblog.com/post/Ceph_introduction".substr(19,50),      // Ensure uniqueness and length less than 50
             distractionFreeMode: false  // Facebook-like distraction free mode
         })
 
@@ -447,24 +447,24 @@ ga('send', 'pageview');
 
 
     
-        <script src="../../libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="../../libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="../../libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="../../libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="../../libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="../../libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="../../libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="../../libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="../../libs/lightgallery/js/lg-video.min.js"></script>
+        <script src="../libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="../libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="../libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="../libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="../libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="../libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="../libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="../libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="../libs/lightgallery/js/lg-video.min.js"></script>
     
     
-        <script src="../../libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+        <script src="../libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
     
 
 
 
 <!-- Custom Scripts -->
-<script src="../../js/main.js"></script>
+<script src="../js/main.js"></script>
 
     </div>
 </body>
